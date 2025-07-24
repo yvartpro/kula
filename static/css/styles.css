@@ -1,0 +1,69 @@
+
+
+
+.dashboard{
+  margin-top:100px;
+
+}
+header{
+  background-image:url('../icons/bg.jpg');
+  background-size:cover;
+  background-repeat:no-repeat;
+  width:100%;
+  height:30vh;
+}
+header a{
+  color:#fff;
+}
+header a:hover{
+  cursor:pointer;
+  color:bluesky;
+}
+@media only screen and (min-width:576px){
+  header{
+    height:50vh;
+	  }
+}
+
+/* booking */
+.post-img{
+  width:100%;
+}
+p.title{
+  margin-top:3px;
+  margin-bottom:3px;
+}
+
+.qwerty img{
+  object-fit:cover;
+}
+.post-description{
+  display:none;
+    position: relative;
+    top: 187px;
+}
+.qwerty:hover  .post-description{
+    color: wheat;
+    background-color: #9f9d8c7d;
+    display:block;
+  cursor:pointer;
+}
+
+.container {
+        width: 25%;
+        margin-top: 40px !important;
+    }
+  
+.resto img{
+     width:15%;
+     object-fit: cover;
+}
+button {
+    height: 32.4px;
+    line-height: 28.4px;
+    width: 95px;
+    font-size: 13px;
+    background-color: #66d7cd;
+    border: none !important;
+    border-radius: 16px;
+}

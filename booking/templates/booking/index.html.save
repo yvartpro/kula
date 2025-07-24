@@ -1,0 +1,31 @@
+  {% extends 'base.html' %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block content %}
+ <main class="container">
+  <header class="row center">
+    <div class="row col s12 m6 offset-m3">
+      <div class="col s2">
+        <a href="#">Home</a>
+      </div>
+      <div class="col s2">
+        <a href="#">Date</a>
+      </div>
+      <div class="col s3">
+        <a href="#">Occasion</a>
+      </div>
+      <div class="col s2">
+        <a href="#">Business</a>
+      </div>
+      <div class="col s3">
+        <a href="#">Celebration</a>
+      </div>
+      <div class="restoview">
+          
+      </div>
+    </div>
+  </header>
+ </main>
+
+{% endblock %}
+

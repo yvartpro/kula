@@ -1,0 +1,50 @@
+
+
+
+  {% extends 'base.html' %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block content %}
+<header class="row center">
+  <div class="row col s12 m6 offset-m3 sty">
+    <div class="col s2">
+      <a href="{% url 'home' %}">HOME</a>
+    </div>
+    <div class="col s2">
+      <a href="{% url 'date' %}">DATE</a>
+    </div>
+    <div class="col s3">
+      <a href="{% url 'occasion' %}">OCCASION</a>
+    </div>
+    <div class="col s2">
+      <a href="{% url 'business' %}">BUSINESS</a>
+    </div>
+    <div class="col s3">
+      <a href="{% url 'celebration' %}">CELEBRATION</a>
+    </div>
+  </div>
+</header>
+ <main class="container">
+  {% for type in types %}
+  <div class="resto">
+    {% if type.profile.photo %}
+    <img src="{{type.profile.photo.url}}" alt="Restaurant image">
+    {% endif %}
+    <p>{{type.user.first_name}}</p>
+   <div class="button">
+    <a href="{% url 'book' type.user.id %}" type="submit">Book now</button></a>
+   </div>   
+  </div>
+
+ {% endfor %}
+<div class="row">
+{% for post in posts %}
+ <div class="col s6 m4 qwerty">
+   <p class="post-description">{{post.description}}</p>
+   <img src="{{post.photo.url}}" style="width:100%;height:173px">
+   <p>{{post.title}}</p>
+ </div>
+{% endfor %}
+</div>
+ </main>
+{% endblock %}

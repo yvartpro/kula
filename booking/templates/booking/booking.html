@@ -1,0 +1,103 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Book a table{% endblock %}
+{% block content %}
+<header class="row center">
+  <div class="row col s12 m6 offset-m3 sty">
+    <div class="col s2">
+      <a href="{% url 'home' %}">HOME</a>
+    </div>
+    <div class="col s2">
+      <a href="{% url 'date' %}">DATE</a>
+    </div>
+    <div class="col s2">
+      <a href="{% url 'occasion' %}">OCCASION</a>
+    </div>
+    <div class="col s2">
+      <a href="{% url 'business' %}">BUSINESS</a>
+    </div>
+    <div class="col s2">
+      <a href="{% url 'celebration' %}">CELEBRATION</a>
+    </div>
+  </div>
+</header>
+<main class="container">
+  <button class="btn btn-small" id="bookBtn">Book now</button>
+  <div class="row">
+    <div class="col s12 m4">
+      <img src="{% static 'icons/bg.jpg' %}" class="post-img"/>
+      <p class="center title">Find you prefered dish</p>
+     </div>
+  </div>
+  <div id="bookingForm" style="display:none">
+   <h4 class="green-text text-darken-4 text-center">Booking</h4>
+    <form action="{% url 'booking' %}" method="POST"class="row">
+      {% csrf_token %}
+        <input value="{{company}}" name="company" hidden>
+
+     <div class="col s6 m4">
+        <label for="name">Full name</label>
+        <input type="text" name="full_name" id="name" class="" placeholder"" required>
+     </div>
+
+     <div class="col s6 m4">
+        <label for="phone">Phone</label>
+        <input type="number" name="phone" class="" placeholder="" required>
+     </div>
+
+     <div class="col s6 m4">
+        <label for="email">Email</label>
+        <input type="email" name="email" class="" placeholder="" required>
+     </div>
+
+         <input value="{{post}}" name="post" hidden>
+ 
+     <div class="col s6 m4">
+        <label for="name">People</label>
+        <input type="number" name="people" id="name" class="" placeholder="poeple" required>
+     </div>
+
+     <div class="col s6 m4">
+        <label for="age">Time</label>
+        <input type="time" name="time" id="time" class="" required>
+     </div>
+
+
+     <div class="col s6 m4">
+        <label for="date">Date</label>
+        <input type="date" name="date" class="" placeholder="date" required>
+     </div>
+
+
+
+    <div class="col s6 m4">
+        <select name="type" class="method">
+          <option>Type</option>
+          <option value="date">DATE</option>
+          <option value="occasion">OCCASION</option>
+          <option value="celebration">CELEBRATION</option>
+          <option value="business">BUSINESS</option>
+        </select>
+     </div>
+
+     <div class="col s6 m4">
+        <label for="rqst">Note</label>
+        <input type="text" placeholder="special_request" id="rqst">
+      </div>
+     <div class="col s6  m4">
+        <label for="pay">Payment</label>
+        <input type="number" name="account" id="pay" class="" placeholder="Vovotapesa account" required>
+     </div>
+
+   
+
+     <div  class="col s12 center">
+       <button type="submit" class="btn btn-small" style="width:104px;border: none;
+    border-radius: 18px;">Book now</button>
+     </div>
+
+    </form>
+  </div>
+</main>
+{% endblock %}
